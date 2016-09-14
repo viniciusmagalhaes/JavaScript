@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Grammar</title>
+  <script>
+  /**
+   * Math.floor: Return the number integer
+   */
+
+    var integer = Math.floor(10.34);
+    console.log(integer);
+
+
+    var string = " text and \"example\" ";
+    console.log(string);
+
+
+    /**
+   * Switch
+   */
+    var name = "Vinicius";
+    switch(name) {
+
+      case 0:
+        name = "Magalhães";
+        break;
+
+      case 1:
+        name = "Viniciusx";
+        break;
+
+      default:
+        name = "Padrão";
+        break;
+    }
+    console.log(name);
+
+
+    /**
+   * Method: Date
+   */
+    var d = new Date();
+
+    console.log(d + "\n" + d.getDay());
+
+
+    var prancha = { quilha: "FCS2", leash: "Kely", board: "DHDA" },
+       test = "";
+
+    for(test in prancha) {
+      if(prancha.hasOwnProperty('quilha')) {
+        console.log('Yes');
+      } else {
+        console.log('No');
+      }
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

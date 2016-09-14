@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Grammar</title>
+  <style>
+    .container {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="">
+      <legend>Try</legend>
+      <fieldset>
+        <label>Enter with number between 5 and 10</label>
+        <input id="fieldEntry" type="text">
+        <button type="button" id="btn">Try</button>
+      </fieldset>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <div class="container">
+    <form action="">
+      <legend>While / Do</legend>
+      <fieldset>
+        <label>Enter with your name (While test)</label>
+        <input id="field-number" type="text">
+        <button type="button" id="send-number">Send</button>
+      </fieldset>
+    </form>
+    <div id="number"></div>
+  </div>
+
+  <div class="xyz"></div>
+
+  <script>
+  /**
+   * Try
+   */
+
+    function testNumber() {
+      var x, message;
+
+      message = document.getElementById('message');
+      message.innerHTML = "";
+
+      x = document.getElementById("fieldEntry").value;
+      try {
+        if(x == "") throw "empty";
+        if(isNaN(x)) throw "Not a number";
+        if(x == "") throw "empty";
+        var n = Number(x);
+        if(n < 5) throw "Too low";
+        if(n > 10) throw "Too high";
+      }
+      catch (err) {
+        message.innerHTML = "Input is " + err;
+      }
+    }
+
+    document.getElementById('btn').addEventListener("click", testNumber);
+
+
+  /**
+   * While / Do
+   */
+    function whilteTest() {
+      var n = 0, fieldNumber, divName;
+
+      receiveNumber = document.getElementById("field-number").value;
+      divName       = document.getElementById("number");
+
+      divName.innerHTML = " ";
+
+      while(n < receiveNumber) {
+        divName.innerHTML += n + " - " + receiveNumber + "<br />";
+        n++;
+      }
+
+      // do {
+      //   divName.innerHTML += n + " - " + receiveNumber + "<br />";
+      //   n++;
+      // }
+      // while(n < receiveNumber);
+    }
+    document.getElementById("send-number").addEventListener("click", whilteTest);
+
+
+    /**
+   * Throw
+   */
+    try {
+      asalert("tryyy");
+    }
+    catch(err) {
+      var x = document.getElementsByClassName("xyz");
+      x[0].innerHTML = err.message
+    }
+
+  </script>
+</body>
+</html>
