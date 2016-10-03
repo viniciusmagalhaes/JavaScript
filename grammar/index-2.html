@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Grammar - 2</title>
+  <title>Object literal - 1</title>
   <style>
     .container {
       margin-bottom: 30px;
@@ -11,14 +11,36 @@
 </head>
 <body>
   <div class="container">
-    
+    <div id="car"></div>
+    <div id="creat"></div>
   </div>
-
+  <div class="container">
+    <div id="car-image"></div>
+  </div>
   <script>
   /**
-   * Try
+   * Object
    */
+   var car = {
+    type: "Fiat",
+    color: "White",
+    year: "1997",
+    model: "500",
+    images: ["foto-1.jpg", "foto-2.jpg", "foto-3.jpg", "foto-4.jpg"],
+    teste: {
+      x: "500",
+      y: "300",
+    }
+   }
 
+   car.type = "Ferrari"; // I can update value of the a property
+   car.create = "Pairs create"; // I can create a new pairs o object
+
+   document.getElementById('car').innerHTML = "My car's type is " +  car["type"];
+   document.getElementById('creat').innerHTML = "Criado: " +  car["create"];
+   document.getElementById('car').innerHTML = "My car's type is " +  car.type; // If the expression is a constant i can use the . notation instead the []
+
+   document.getElementById('car-image').innerHTML = car.images[0] + " - " + car.teste.x;
 
   </script>
 </body>
