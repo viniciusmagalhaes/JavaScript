@@ -17,6 +17,12 @@
   <div class="container">
     <div id="car-image"></div>
   </div>
+  <div class="container">
+    <div id="skate"></div>
+  </div>
+  <div class="container">
+    <div id="for-in"></div>
+  </div>
   <script>
   /**
    * Object
@@ -33,6 +39,13 @@
     }
    }
 
+
+   var skateboarding = {
+    shape: "Flip",
+    wheel: "Spitfirer",
+    grip: "Greezly",
+   }
+
    car.type = "Ferrari"; // I can update value of the a property
    car.create = "Pairs create"; // I can create a new pairs o object
 
@@ -41,6 +54,15 @@
    document.getElementById('car').innerHTML = "My car's type is " +  car.type; // If the expression is a constant i can use the . notation instead the []
 
    document.getElementById('car-image').innerHTML = car.images[0] + " - " + car.teste.x;
+
+
+   document.getElementById('skate').innerHTML = "Teste skate: " + skateboarding.shape;
+
+   // for-in
+   var teste;
+   for(teste in car) {
+      document.getElementById('for-in').innerHTML = teste + " - " + car[teste];
+   }
 
   </script>
 </body>
