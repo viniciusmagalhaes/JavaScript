@@ -36,9 +36,11 @@
     teste: {
       x: "500",
       y: "300",
+    },
+    other: function() {
+      return console.log("function inside object");
     }
    }
-
 
    var skateboarding = {
     shape: "Flip",
@@ -52,16 +54,25 @@
    document.getElementById('car').innerHTML = "My car's type is " +  car["type"];
    document.getElementById('creat').innerHTML = "Criado: " +  car["create"];
    document.getElementById('car').innerHTML = "My car's type is " +  car.type; // If the expression is a constant i can use the . notation instead the []
-
    document.getElementById('car-image').innerHTML = car.images[0] + " - " + car.teste.x;
-
-
    document.getElementById('skate').innerHTML = "Teste skate: " + skateboarding.shape;
 
    // for-in
-   var teste;
-   for(teste in car) {
-      document.getElementById('for-in').innerHTML = teste + " - " + car[teste];
+   for(var i in car) {
+    if(typeof car[i] !== 'function') {
+      console.log( "obj." + i + " - " + car[i]);
+    }
+   }
+
+
+   var y;
+   var properties = [
+    "type",
+    "model"
+   ]
+
+   for(var z = 0; z < properties.length; z += 1) {
+    console.log(properties[z]);
    }
 
   </script>
