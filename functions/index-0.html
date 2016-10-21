@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Four invocation patterns</title>
+  <style> .container { margin-bottom: 30px; }</style>
+</head>
+<body>
+  <div class="container">
+    <div id="item-1"></div>
+    <div id="item-2"></div>
+  </div>
+  <div class="container">
+    <div id="item-3"></div>
+  </div>
+  <div class="container">
+    <div id="item-4"></div>
+  </div>
+  <div class="container">
+    <div id="item-5"></div>
+  </div>
+  <script>
+  /**
+   * Function Literal
+   */
+
+   var add = function(a, b) {
+    return a + b;
+   };
+
+   var context = document.getElementById('item-1');
+
+   context.innerHTML = add(2,5);
+
+   // ==========================================================================
+   // JavaScript functions is how different invocation 
+   // patterns can produce vastly different results.
+   // ==========================================================================
+
+   /**
+   * Patterns of invocation:
+   * 1 - Method invocation
+   * 2 - Function invocation 
+   * 3 - Constructor invocation 
+   * 4 - Apply invocation 
+   */
+
+   // 1- Method invocation
+   // ==========================================================================
+   var obj = {
+    value: 0,
+    increment: function(o) {
+      this.value += typeof o === 'number' ? o : 1;
+    }
+   }
+
+   obj.increment(); //Method invocation
+   document.getElementById('item-1').innerHTML = "Method invocation: " + obj.value;
+
+
+   //
+   // 2 - Function Invocation - Function invocation is performed by invoking a function using ()
+   // ==========================================================================
+   var sum = add(10,10); /* When a function is invoked with this pattern, this is bound to the global object. */
+
+   document.writeln("Invoked function: " + sum);
+
+
+   myObject.double = function () {
+    var that = this; // workround
+
+    var helper = function () {
+      that.value = add(that.value, that.value);
+    };
+
+    helper();
+   };
+
+
+   // 3 - The Constructor Invocation Pattern
+
+
+
+  </script>
+</body>
+</html>

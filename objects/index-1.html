@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Object literal - 1</title>
+  <style>
+    .container {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="item-1"></div>
+    <div id="item-2"></div>
+  </div>
+  <div class="container">
+    <div id="item-3"></div>
+  </div>
+  <div class="container">
+    <div id="item-4"></div>
+  </div>
+  <div class="container">
+    <div id="item-5"></div>
+  </div>
+  <script>
+  /**
+   * Global Abatement
+   */
+  
+    var myapp = {};
+
+    myapp.car = {
+      color: "Red",
+      model: "Gol",
+      age: "2006",
+    }
+
+    var block = document.getElementById('item-1');
+
+    block.innerHTML = myapp.car["color"] + " - " + myapp.car.age;
+
+
+  </script>
+</body>
+</html>
