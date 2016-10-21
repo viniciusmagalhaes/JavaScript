@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Object literal - 0</title>
-  <style>
-    .container {
-      margin-bottom: 30px;
-    }
+  <style> .container { margin-bottom: 30px; }
   </style>
 </head>
 <body>
@@ -24,9 +21,10 @@
     <div id="for-in"></div>
   </div>
   <script>
-  /**
-   * Object
-   */
+   // ==========================================================================
+   // Object 
+   // ==========================================================================
+
    var car = {
     type: "Fiat",
     color: "White",
@@ -57,7 +55,9 @@
    document.getElementById('car-image').innerHTML = car.images[0] + " - " + car.teste.x;
    document.getElementById('skate').innerHTML = "Teste skate: " + skateboarding.shape;
 
-   // for-in
+  //
+  // for in
+  // ==========================================================================
    for(var i in car) {
     if(typeof car[i] !== 'function') {
       console.log( "obj." + i + " - " + car[i]);
@@ -74,6 +74,20 @@
    for(var z = 0; z < properties.length; z += 1) {
     console.log(properties[z]);
    }
+
+   //
+  // Object Constructor
+  // ==========================================================================
+  function skateboading(wheels, shape, truck, bearing) {
+    this.wheels = wheels;
+    this.shape = shape;
+    this.truck = truck;
+    this.bearing = bearing;
+  }
+
+  var ideal = new skateboading("Spit fire", "Flip", "Independet", "Red Bones");
+
+  document.writeln(ideal.wheels);
 
   </script>
 </body>
