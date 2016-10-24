@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Four invocation patterns</title>
+  <style> .container { margin-bottom: 30px; }</style>
+</head>
+<body>
+  <div class="container">
+    <div id="item-1"></div>
+    <div id="item-2"></div>
+  </div>
+  <div class="container">
+    <div id="item-3"></div>
+  </div>
+  <div class="container">
+    <div id="item-4"></div>
+  </div>
+  <div class="container">
+    <div id="item-5"></div>
+  </div>
+  <script>
+  // ==========================================================================
+  // A bonus parameter that is available to functions when they are invoked is the arguments array
+  // ==========================================================================
+
+  var sum = function() {
+    var i, sum = 0;
+
+    for(i = 0; i < arguments.length; i++) {
+      sum += arguments[i];
+    }
+
+    return sum;
+  };
+
+  document.getElementById("item-1").innerHTML = sum(1,3,4,7,9,22,44,100); // I can add n parameters
+
+
+  // ==========================================================================
+  // Exceptions
+  // ==========================================================================
+
+  var add = function(a, b) {
+
+    if(typeof a !== 'number' || typeof b !== 'number') {
+
+      throw {
+        name: 'TypeError',
+        message: 'add needs numbers',
+      };
+    }
+    return a + b;
+  }
+
+  var try_it = function() {
+
+    try {
+      add("even","xx");
+    } catch(e) {
+      document.getElementById("item-2").innerHTML = "Try: " + e.name + " " + e.message;
+    }
+
+  }
+
+  try_it();
+
+  </script>
+</body>
+</html>
