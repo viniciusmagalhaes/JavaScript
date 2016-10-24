@@ -54,6 +54,7 @@
    }
 
    obj.increment(); //Method invocation
+
    document.getElementById('item-2').innerHTML = "Method invocation: " + obj.value;
 
 
@@ -97,7 +98,7 @@
    document.getElementById("item-4").innerHTML = "The brand of my shape is: " + myShape.brand;
 
    //
-   // Apply invocation 
+   // 4 - Apply invocation 
    // ==========================================================================
    var arr, that;
 
@@ -110,8 +111,6 @@
    // The apply method takes two parameters: The first is the value that should be bound to this. The second is an array of parameters.
    that = add.apply(null, arr);
    document.getElementById('item-5').innerHTML = "Apply invocation: " + that;
-
-
 
   </script>
 </body>
