@@ -37,32 +37,6 @@
   <div class="xyz"></div>
 
   <script>
-  /**
-   * Try
-   */
-
-    function testNumber() {
-      var x, message;
-
-      message = document.getElementById('message');
-      message.innerHTML = "";
-
-      x = document.getElementById("fieldEntry").value;
-      try {
-        if(x == "") throw "empty";
-        if(isNaN(x)) throw "Not a number";
-        if(x == "") throw "empty";
-        var n = Number(x);
-        if(n < 5) throw "Too low";
-        if(n > 10) throw "Too high";
-      }
-      catch (err) {
-        message.innerHTML = "Input is " + err;
-      }
-    }
-
-    document.getElementById('btn').addEventListener("click", testNumber);
-
 
   /**
    * While / Do

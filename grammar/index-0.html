@@ -3,62 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <title>Grammar</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Math.floor: Return the number integer</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <h2>Escape</h2>
+    <p>The escape sequences allow for inserting characters into strings that are not normally permitted</p>
+    <div class="item-2"></div>
+  </div>
+
+  <div class="container">
+    <div class="item-3"></div>
+  </div>
+
+  <div class="container">
+    <h2>For in</h2>
+    <p>Enumerates the property names (or keys) of an object.</p>
+    <p>hasOwnProperty: To determine whether the property name is truly a member of the object or was found instead on the proto-type chain.</p>
+    <div class="item-4"></div>
+  </div>
+
+  <div class="container">
+    <h2>Try</h2>
+    <form action="">
+      <legend>Enter with number between 5 and 10</legend>
+      <fieldset>
+        <input type="text" class="number">
+        <button type="button" class="js-button">Try</button>
+      </fieldset>
+    </form>
+    <div class="item-5"></div>
+  </div>
+
   <script>
-  /**
-   * Math.floor: Return the number integer
-   */
+   // ==========================================================================
+   // Math.floor: Return the number integer
+   // ==========================================================================
 
     var integer = Math.floor(10.34);
-    console.log(integer);
 
+    document.querySelector(".item-1").innerHTML = "Return integer: " + integer;
+
+
+    // ==========================================================================
+    // Backslash: escape character
+    // ==========================================================================
 
     var string = " text and \"example\" ";
-    console.log(string);
+
+    document.querySelector(".item-2").innerHTML = "Escape string: " + string;
 
 
-    /**
-   * Switch
-   */
-    var name = "Vinicius";
-    switch(name) {
+   // ==========================================================================
+   // Method: Date 
+   // ==========================================================================
 
-      case 0:
-        name = "Magalhães";
-        break;
-
-      case 1:
-        name = "Viniciusx";
-        break;
-
-      default:
-        name = "Padrão";
-        break;
-    }
-    console.log(name);
-
-
-    /**
-   * Method: Date
-   */
     var d = new Date();
 
-    console.log(d + "\n" + d.getDay());
+    document.querySelector(".item-3").innerHTML = d + d.getDay();
 
 
-    var prancha = { quilha: "FCS2", leash: "Kely", board: "DHDA" },
-       test = "";
+    // ==========================================================================
+    // For in
+    // ==========================================================================
+
+    var test    = "",
+        prancha = { quilha: "FCS2", leash: "Rip curl", board: "DHDA" };
 
     for(test in prancha) {
       if(prancha.hasOwnProperty('quilha')) {
-        console.log('Yes');
+        document.querySelector(".item-4").innerHTML = "Return: True";
       } else {
-        console.log('No');
+        document.querySelector(".item-4").innerHTML = "Return: False";
       }
     }
 
+    // ==========================================================================
+    // Try
+    // ==========================================================================
+
+    function testNumber() {
+
+      var message = document.querySelector(".item-5");
+      var x       = document.querySelector(".number").value;
+      var n       = Number(x);
+
+      try {
+        if(typeof n === "") throw "Empty";
+        if(isNaN(n)) throw "Not a number";
+        if(n < 5) throw "Too low";
+        if(n > 10) throw "Too Hight";
+      } catch(e) {
+        message.innerHTML = "Input is: " + e;
+      }
+
+    }
+
+    document.querySelector(".js-button").addEventListener("click", testNumber);
+
+
   </script>
-</head>
-<body>
-  
 </body>
 </html>
