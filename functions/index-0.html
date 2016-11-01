@@ -3,32 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Functions - Four invocation patterns</title>
-  <style> .container { margin-bottom: 30px; }</style>
+  <link rel="stylesheet" href="../assets/css/index.css">
 </head>
 <body>
   <div class="container">
+    <h2>Function Literal</h2>
     <div id="item-1"></div>
-    <div id="item-2"></div>
   </div>
+
+  <div class="container">
+    <div id="item-2"></div>
+</div>
+
   <div class="container">
     <div id="item-3"></div>
   </div>
+
   <div class="container">
     <div id="item-4"></div>
   </div>
+
   <div class="container">
     <div id="item-5"></div>
   </div>
+
+  <div class="container">
+    <div id="item-6"></div>
+  </div>
+
   <script>
-  /**
-   * Function Literal
-   */
+   // ==========================================================================
+   // Function Literal
+   // ==========================================================================
 
    var add = function(a, b) {
     return a + b;
    };
 
    document.getElementById('item-1').innerHTML = add(2,5);
+
 
    // ==========================================================================
    // JavaScript functions is how different invocation 
@@ -75,7 +88,7 @@
       th.value++;
 
       var innerFunction = function () {
-        alert(th.value);
+        document.getElementById('item-4').innerHTML = th.value;
       }
 
       innerFunction(); //Function invocation ( When using the function invocation pattern, this is set to the global object an soluctions is use for example: var th = this; )
@@ -95,7 +108,7 @@
 
    var myShape = new shape("Flip");
 
-   document.getElementById("item-4").innerHTML = "The brand of my shape is: " + myShape.brand;
+   document.getElementById("item-5").innerHTML = "The brand of my shape is: " + myShape.brand;
 
    //
    // 4 - Apply invocation 
@@ -107,7 +120,7 @@
    var arr = [2, 10];
 
    // The apply method takes two parameters: The first is the value that should be bound to this. The second is an array of parameters.
-   document.getElementById('item-5').innerHTML = "Apply invocation: " + add.apply(null, arr);
+   document.getElementById('item-6').innerHTML = "Apply invocation: " + add.apply(null, arr);
 
   </script>
 </body>
