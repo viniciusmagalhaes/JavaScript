@@ -41,6 +41,18 @@
     <div class="item-5"></div>
   </div>
 
+  <div class="container">
+    <h2>While</h2>
+    <form action="">
+      <legend>Enter with a number</legend>
+      <fieldset>
+        <input type="text" class="number-2">
+        <button type="button" class="js-button-2">Try</button>
+      </fieldset>
+    </form>
+    <div class="item-6"></div>
+  </div>
+
   <script>
    // ==========================================================================
    // Math.floor: Return the number integer
@@ -107,6 +119,26 @@
 
     document.querySelector(".js-button").addEventListener("click", testNumber);
 
+
+    // ==========================================================================
+    // While
+    // ==========================================================================
+    function whileTest() {
+
+      var n       = 0;
+      var y       = document.querySelector(".number-2").value;
+      var context = document.querySelector(".item-6");
+
+      while(n < y) {
+
+        context.innerHTML += n + " - " + y + "<br />";
+        n++
+
+      }
+
+    }
+
+    document.querySelector(".js-button-2").addEventListener("click", whileTest);
 
   </script>
 </body>
