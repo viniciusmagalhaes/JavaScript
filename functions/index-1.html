@@ -22,6 +22,11 @@
     <div class="item-3"></div>
   </div>
 
+  <div class="container">
+    <div class="item-4"></div>
+    <button class="js-button-counter">Counter</button>
+  </div>
+
   <script>
 
   // ==========================================================================
@@ -92,6 +97,40 @@
   console.timeEnd('Factor');
 
   document.querySelector(".item-3").innerHTML = factor(10);
+
+
+  // ==========================================================================
+  // Closures
+  // ==========================================================================
+
+  // (function added() {
+
+  //   var counter = 0;
+
+  //   return function() {
+  //     counter += 1;
+  //   }
+
+  // })();
+
+  var added = (function () {
+
+    var counter = 0;
+
+    return function() {
+
+      return counter += 1;
+
+    }
+
+  })();
+
+
+  document.querySelector(".js-button-counter").addEventListener("click", function() {
+
+    document.querySelector(".item-4").innerHTML = added();
+
+  });
 
 
   </script>

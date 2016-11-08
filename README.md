@@ -12,6 +12,20 @@ Every object is linked to a prototype object from which it can inherit propertie
 
 Functions in JavaScript are objects. Objects are collections of name/value pairs having a hidden link to a prototype object. Objects produced from object literals are linked to Object.prototype . Function objects are linked to Function.prototype (which is itself linked to Object.prototype ). Every function is also created with two additional hidden properties: the function’s context and the code that implements the function’s behavior.
 
+## Function Declaration
+
+Similar to the var statement, function declarations are hoisted to the top of other code.
+
+
+## Function expression
+
+Function expressions aren’t hoisted, which allows them to retain a copy of the local variables from the scope where they were defined.
+There are several different ways that function expressions become more useful than function declarations.
+
+- As closures
+- As arguments to other functions
+- As Immediately Invoked Function Expressions (IIFE)
+
 ## Recursion
 
 Recursion is best applied when you need to call the same function repeatedly with different parameters from within a loop. While it can be used in many situations, it is most effective for solving problems involving iterative branching, such as fractal math, sorting, or traversing the nodes of complex or non-linear data structures.
