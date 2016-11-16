@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Grammar - Try</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Try</h2>
+    <form action="">
+      <legend>Enter with number between 5 and 10</legend>
+      <fieldset>
+        <input type="text" class="number">
+        <button type="button" class="js-button">Try</button>
+      </fieldset>
+    </form>
+    <div class="item-5"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // Try
+    // ==========================================================================
+
+    function testNumber() {
+
+      var message = document.querySelector(".item-5");
+      var x       = document.querySelector(".number").value;
+      var n       = Number(x);
+
+      try {
+        if(typeof n === "") throw "Empty";
+        if(isNaN(n)) throw "Not a number";
+        if(n < 5) throw "Too low";
+        if(n > 10) throw "Too Hight";
+      } catch(e) {
+        message.innerHTML = "Input is: " + e;
+      }
+
+    }
+
+    document.querySelector(".js-button").addEventListener("click", testNumber);
+
+  </script>
+</body>
+</html>

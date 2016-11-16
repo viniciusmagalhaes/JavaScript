@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Grammar - While</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>While</h2>
+    <form action="">
+      <legend>Enter with a number</legend>
+      <fieldset>
+        <input type="text" class="number">
+        <button type="button" class="js-button">Try</button>
+      </fieldset>
+    </form>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // While
+    // ==========================================================================
+    var button  = document.querySelector(".js-button");
+
+    function whileTest() {
+
+      var n       = 0;
+      var y       = document.querySelector(".number").value;
+      var context = document.querySelector(".item-1");
+
+      while(n < y) {
+
+        context.innerHTML += n + " - " + y + "<br />";
+        n++
+
+      }
+
+    }
+
+    button.addEventListener("click", whileTest);
+
+  </script>
+</body>
+</html>

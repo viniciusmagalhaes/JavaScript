@@ -38,7 +38,7 @@
 
   <script>
    // ==========================================================================
-   // Object 
+   // Object Literal
    // ==========================================================================
 
    var car = {
@@ -51,13 +51,15 @@
       x: "500",
       y: "300",
     },
-    other: function() {
+    other: function(){ // Method
       return console.log("function inside object");
     }
    }
 
    car.type = "Ferrari"; // I can update value of the a property
    car.create = "Pairs create"; // I can create a new pairs o object
+
+   car.other();
 
    document.querySelector('.item-1').innerHTML = "My car's type is " +  car.type; // If the expression is a constant i can use the . notation instead the []
    document.querySelector('.item-2').innerHTML = "Criado: " +  car["create"];

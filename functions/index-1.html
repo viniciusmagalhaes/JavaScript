@@ -23,10 +23,15 @@
   </div>
 
   <div class="container">
+    <h2>Closure</h2>
+    <p>Uma closure deixa você associar dados (do ambiente) com uma função que trabalha estes dados.</p>
     <div class="item-4"></div>
     <button class="js-button-counter">Counter</button>
   </div>
 
+  <button class="js-size-18">Size 18</button>
+  <button class="js-size-20">Size 20</button>
+  <button class="js-size-22">Size 22</button>
   <script>
 
   // ==========================================================================
@@ -38,13 +43,13 @@
     var i, sum = 0;
 
     for(i = 0; i < arguments.length; i++) {
-      sum += arguments[i];
+      sum += arguments[i] + "<br />";
     }
 
     return sum;
   };
 
-  document.getElementById("item-1").innerHTML = sum(1,3,4,7,9,22,44,100); // I can add n parameters
+  document.getElementById("item-1").innerHTML = sum(2,3,4,7,9,22,44,100); // I can add n parameters
 
 
   // ==========================================================================
@@ -102,16 +107,6 @@
   // ==========================================================================
   // Closures
   // ==========================================================================
-
-  // (function added() {
-
-  //   var counter = 0;
-
-  //   return function() {
-  //     counter += 1;
-  //   }
-
-  // })();
 
   var added = (function () {
 

@@ -101,7 +101,9 @@
    // ==========================================================================
 
    var add = function(a, b) {
+
     return a + b;
+
    };
 
    document.getElementById('item-3').innerHTML = add(2,5);
@@ -150,7 +152,7 @@
 
     increment: function() {
 
-      var th = this; // For the 'this' not be global.
+      var th = this; // for the 'this' become global
       th.value++;
 
       var innerFunction = function () {
