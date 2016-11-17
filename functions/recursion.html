@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Recursion</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Recursion</h2>
+    <p>Recursion is best applied when you need to call the same function repeatedly with different parameters from within a loop. While it can be used in many situations, it is most effective for solving problems involving iterative branching, such as fractal math, sorting, or traversing the nodes of complex or non-linear data structures. <a href="https://www.sitepoint.com/recursion-functional-javascript/">Article</a></p>
+    <div class="item-1"></div>
+  </div>
+  <script>
+  // ==========================================================================
+  // Recursion
+  // ==========================================================================
+
+  console.time('Factor');
+  var factor = function(n) {
+
+    if(n <= 0) {
+
+      return 1;
+
+    } else {
+
+      return (n * factor(n - 1));
+
+    }
+
+  }
+  console.timeEnd('Factor');
+
+  document.querySelector(".item-1").innerHTML = factor(10);
+
+  </script>
+</body>
+</html>

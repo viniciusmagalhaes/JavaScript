@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Function Expression</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <p>A Function Expression defines a function as a part of a larger expression syntax (typically a variable assignment ). Functions defined via Functions Expressions can be named or anonymous. Function Expressions must not start with “function” (hence the parentheses around the self invoking example below)</p>
+    <p>Anonymous function expression</p>
+    <div class="item-1"></div><br>
+  </div>
+
+  <div class="container">
+    <p>Named function expression</p>
+    <div class="item-2"></div><br>
+  </div>
+
+  <div class="container">
+    <p>Self invoking function expression</p>
+    <div class="item-3"></div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // Function Expression
+  // ==========================================================================
+
+    //
+    // Anonymous function expression
+    // ==========================================================================
+    var a = function() {
+      return 2;
+    }
+
+    document.querySelector(".item-1").innerHTML = a;
+
+    //
+    // Named function expression
+    // ==========================================================================
+    var a = function foo() {
+      return 2;
+    }
+
+    document.querySelector(".item-2").innerHTML = a;
+
+    //
+    // Self invoking function expression
+    // ==========================================================================
+    var b = (function SayHello() {
+
+      alert("Hello !!!");
+
+    })(); // Function expressions will execute automatically if the expression is followed by ().
+
+    document.querySelector(".item-3").innerHTML = b;
+
+  </script>
+</body>
+</html>

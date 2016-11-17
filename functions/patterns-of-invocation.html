@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Patterns of invocation</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Method invocation</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <h2>Function Invocation - is performed by invoking a function using ()</h2>
+    <div class="item-2"></div>
+    <div class="item-2-1"></div>
+  </div>
+
+  <div class="container">
+    <h2>Constructor Invocation</h2>
+    <div class="item-3"></div>
+  </div>
+
+  <div class="container">
+    <h2>Apply invocation</h2>
+    <div class="item-4"></div>
+  </div>
+
+  <script>
+   // ==========================================================================
+   // JavaScript functions is how different invocation 
+   // patterns can produce vastly different results.
+   // ==========================================================================
+
+   /**
+   * Patterns of invocation:
+   * 1 - Method invocation
+   * 2 - Function invocation 
+   * 3 - Constructor invocation 
+   * 4 - Apply invocation 
+   */
+
+   //
+   // 1- Method invocation
+   // ==========================================================================
+   var obj = {
+    value: 0,
+    increment: function(o) {
+      this.value += typeof o === 'number' ? o : 1;
+    }
+   }
+
+   obj.increment(); //Method invocation
+
+   document.querySelector('.item-1').innerHTML = "Method invocation: " + obj.value;
+
+
+   //
+   // 2 - Function Invocation - is performed by invoking a function using ()
+   // ==========================================================================
+   var sum = add(10,10); /* When a function is invoked with this pattern, this is bound to the global object. */
+   document.querySelector('.item-2').innerHTML = "Invoked function: " + sum;
+
+   var value = 200;
+
+   var myObj = {
+    value: 0,
+
+    increment: function() {
+
+      var th = this; // for the 'this' become global
+      th.value++;
+
+      var innerFunction = function () {
+        document.querySelector('.item-2-1').innerHTML = th.value;
+      }
+
+      innerFunction(); //Function invocation ( When using the function invocation pattern, this is set to the global object an soluctions is use for example: var th = this; )
+    }
+
+   }
+
+   myObj.increment();
+
+
+   //
+   // 3 - Constructor Invocation
+   // ==========================================================================
+   function shape(brand) {
+    this.brand = brand;
+   }
+
+   var myShape = new shape("Flip");
+
+   document.querySelector(".item-3").innerHTML = "The brand of my shape is: " + myShape.brand;
+
+   //
+   // 4 - Apply invocation
+   // ==========================================================================
+   function add(a, b) {
+    return a * b;
+   }
+
+   var arr = [2, 10];
+
+   // The apply method takes two parameters: The first is the value that should be bound to this. The second is an array of parameters.
+   document.querySelector('.item-4').innerHTML = "Apply invocation: " + add.apply(null, arr);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Arguments</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <p>A bonus parameter that is available to functions when they are invoked is the arguments array</p>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // A bonus parameter that is available to functions when they are invoked is
+  // the arguments array
+  // ==========================================================================
+
+  var sum = function() {
+    var i, sum = 0;
+
+    for(i = 0; i < arguments.length; i++) {
+      sum += arguments[i] + "<br />";
+    }
+
+    return sum;
+  };
+
+  document.querySelector(".item-1").innerHTML = sum(2,3,4,7,9,22,44,100); // I can add n parameters
+
+  </script>
+</body>
+</html>

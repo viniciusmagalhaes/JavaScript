@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects - Object Literal</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Object Literal</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <div class="item-2"></div>
+  </div>
+
+  <div class="container">
+    <div class="item-3"></div>
+  </div>
+
+  <div class="container">
+    <h2>Order of the names of the object</h2>
+    <div class="item-4"></div>
+  </div>
+  
+  <script>
+   // ==========================================================================
+   // Object Literal
+   // ==========================================================================
+
+   var car = {
+    type: "Fiat",
+    color: "White",
+    year: "1997",
+    model: "500",
+    images: ["foto-1.jpg", "foto-2.jpg", "foto-3.jpg", "foto-4.jpg"],
+    teste: {
+      x: "500",
+      y: "300",
+    },
+    other: function(){ // Method
+      return console.log("function inside object");
+    }
+   }
+
+   car.type = "Ferrari"; // I can update value of the a property
+   car.create = "Pairs create"; // I can create a new pairs o object
+
+   car.other();
+
+   document.querySelector('.item-1').innerHTML = "My car's type is " +  car.type; // If the expression is a constant i can use the . notation instead the []
+   document.querySelector('.item-2').innerHTML = "Criado: " +  car["create"];
+   document.querySelector('.item-3').innerHTML = car.images[0] + " - " + car.teste.x;
+
+
+  //
+  // Order of the names of the object
+  // ==========================================================================
+   var properties = [
+    'teste',
+    'images',
+    'model',
+    'year',
+    'color',
+    'type'
+   ]
+
+   for(var i = 0; i < properties.length; i++) {
+
+    document.querySelector('.item-4').innerHTML += properties[i] + " -- " + car[properties[i]] + "<br />";
+
+   }
+
+  </script>
+</body>
+</html>

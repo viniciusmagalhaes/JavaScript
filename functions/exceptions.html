@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Exceptions</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Exceptions</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+
+  // ==========================================================================
+  // Exceptions
+  // ==========================================================================
+
+  var add = function(a, b) {
+
+    if(typeof a !== 'number' || typeof b !== 'number') {
+
+      throw {
+        name: 'TypeError',
+        message: 'add needs numbers',
+      };
+    }
+    return a + b;
+  }
+
+  var try_it = function() {
+
+    try {
+      add("even","xx");
+    } catch(e) {
+      document.querySelector(".item-1").innerHTML = "Try: " + e.name + " " + e.message;
+    }
+
+  }
+
+  try_it();
+
+  </script>
+</body>
+</html>

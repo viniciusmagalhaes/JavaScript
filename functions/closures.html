@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Closures</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Closure</h2>
+    <p>Uma closure deixa você associar dados (do ambiente) com uma função que trabalha estes dados.</p>
+    <div class="item-1"></div>
+    <button class="js-button-counter">Counter</button>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // Closures
+  // ==========================================================================
+
+  var added = (function () {
+
+    var counter = 0;
+
+    return function() {
+
+      return counter += 1;
+
+    }
+
+  })();
+
+
+  document.querySelector(".js-button-counter").addEventListener("click", function() {
+
+    document.querySelector(".item-1").innerHTML = added();
+
+  });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects - for in</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>For in</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // for in
+  // ==========================================================================
+
+   for(var i in car) {
+
+    if(typeof car[i] !== 'function') {
+      document.querySelector('.item-1').innerHTML += i + ": " + car[i] + "<br />";
+    }
+
+   }
+
+  </script>
+</body>
+</html>
