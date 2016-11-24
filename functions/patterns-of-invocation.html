@@ -15,6 +15,7 @@
     <h2>Function Invocation - is performed by invoking a function using ()</h2>
     <div class="item-2"></div>
     <div class="item-2-1"></div>
+    <button class="js-increment">increment</button>
   </div>
 
   <div class="container">
@@ -64,6 +65,7 @@
 
    var value = 200;
 
+
    var myObj = {
     value: 0,
 
@@ -81,7 +83,8 @@
 
    }
 
-   myObj.increment();
+
+   document.querySelector(".js-increment").addEventListener("click", myObj.increment);
 
 
    //

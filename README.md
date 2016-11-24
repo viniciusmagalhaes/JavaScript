@@ -82,3 +82,8 @@ function increment(value2) {
 - Closures can be used to easily pass parameters to callback functions.
 - Private data can be emulated by using closures.  This is common in object-oriented programming and namespace design.
 - Closures should be not overused in constructors.  Adding to the prototype is a better idea.
+
+
+## Module
+
+We can use functions and closure to make modules. A module is a function or object that presents an interface but that hides its state and implementation.

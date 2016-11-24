@@ -13,6 +13,10 @@
     <button class="js-button-counter">Counter</button>
   </div>
 
+  <div class="container">
+    <div class="item-2"></div>
+  </div>
+
   <script>
   // ==========================================================================
   // Closures
@@ -30,28 +34,12 @@
 
   })();
 
-
   document.querySelector(".js-button-counter").addEventListener("click", function() {
 
     document.querySelector(".item-1").innerHTML = added();
 
   });
 
-
-  var quo = function(status) {
-
-    return {
-
-      get_status: function() {
-        return status;
-      }
-
-    };
-  };
-
-  var myQuo = quo("amazed");
-
-  document.writeln(myQuo.get_status());
 
   </script>
 </body>
