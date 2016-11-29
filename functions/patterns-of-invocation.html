@@ -78,11 +78,11 @@
         document.querySelector('.item-2-1').innerHTML = th.value;
       }
 
-      innerFunction(); //Function invocation ( When using the function invocation pattern, this is set to the global object an soluctions is use for example: var th = this; )
+      //Function invocation ( When using the function invocation pattern, this is set to the global object an soluctions is use for example: var th = this; )
+      innerFunction(); 
     }
 
    }
-
 
    document.querySelector(".js-increment").addEventListener("click", myObj.increment);
 

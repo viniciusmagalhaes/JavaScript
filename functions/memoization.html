@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Memoization</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Memoization</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // Memoization
+  // ==========================================================================
+
+  var fibonacci = (function(){
+
+    var memo = {}; // Stored the values for verify if exist
+
+    return function f(n) {
+      var value;
+
+      if(n in memo) {
+
+        value = memo[n];
+
+      } else {
+
+        if(n === 0 || n === 1) {
+
+          value = n;
+
+        } else {
+
+          value = f(n - 1) + f(n - 2);
+
+        }
+
+        memo[n] = value;
+      }
+      return value;
+    }
+  })();
+
+  for(var i = 0; i <= 10; i++) {
+    document.writeln( fibonacci(i) );
+  }
+
+
+  </script>
+</body>
+</html>
