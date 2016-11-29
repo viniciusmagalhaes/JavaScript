@@ -87,3 +87,8 @@ function increment(value2) {
 ## Module
 
 We can use functions and closure to make modules. A module is a function or object that presents an interface but that hides its state and implementation.
+
+
+## Memoization
+
+[Reference] (https://www.sitepoint.com/implementing-memoization-in-javascript/)
