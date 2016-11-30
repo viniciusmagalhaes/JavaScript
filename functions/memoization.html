@@ -40,6 +40,7 @@
         }
 
         memo[n] = value;
+
       }
       return value;
     }
@@ -47,6 +48,44 @@
 
   for(var i = 0; i <= 10; i++) {
     document.writeln( fibonacci(i) );
+  }
+
+
+  //
+  // Memoize multiple arguments
+  // ==========================================================================
+
+  var fibonacciMulti = (function() {
+
+    var memo = {};
+    var slice = Array.prototype.slice;
+
+    return function f(x,n) {
+
+      var args = slice.call(arguments);
+      var value;
+
+      if(args in memo) {
+
+        value = memo[args];
+
+      } else {
+
+        if(n === 0 || n === 1)
+          value = n;
+        else
+          value = f(x, n - 1) + f(x, n - 2);
+
+        memo[arguments] = value;
+      }
+
+      return value;
+    }
+
+  })();
+
+  for(i = 0; i < 10; i++) {
+    console.log(fibonacciMulti(i));
   }
 
 
