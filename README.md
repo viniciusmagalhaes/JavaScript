@@ -92,3 +92,5 @@ We can use functions and closure to make modules. A module is a function or obje
 ## Memoization
 
 [Reference] (https://www.sitepoint.com/implementing-memoization-in-javascript/)
+
+## Pseudoclassical

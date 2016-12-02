@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects - Prototypes</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Object Prototypes</h2>
+    <div class="item-1">
+    </div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // Prototypes
+  // The constructor function is the prototype for Person objects.
+  // It is considered good practice to name constructor function with an upper-case first letter.
+  // ==========================================================================
+  function Person(name, age, city) {
+    this.name = name;
+    this.age = age;
+    this.city = city;
+  }
+
+  var mySelf = new Person("João", 56, "São Paulo");
+
+  //
+  // Adding properties to a Object
+  // ==========================================================================
+  mySelf.nationality = "English";
+
+  //
+  // Using the prototype properties
+  // ==========================================================================
+  Person.prototype.add = 10;
+
+  //
+  // Adding a method to an Object
+  // ==========================================================================
+  mySelf.show = function() {
+    alert(this.name + " " + this.city);
+  }
+
+
+  //
+  // Adding a properties with prototype
+  // ==========================================================================
+
+
+  document.querySelector(".item-1").innerHTML = mySelf.name;
+
+  console.log(mySelf);
+
+
+
+
+  var obj = Object.create(null);
+
+  console.log( "Object create: ", obj );
+
+
+  </script>
+</body>
+</html>
