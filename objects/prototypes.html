@@ -43,16 +43,10 @@
     alert(this.name + " " + this.city);
   }
 
-
   //
   // Adding a properties with prototype
   // ==========================================================================
-
-
   document.querySelector(".item-1").innerHTML = mySelf.name;
-
-  console.log(mySelf);
-
 
 
 
@@ -60,6 +54,16 @@
 
   console.log( "Object create: ", obj );
 
+
+  function eg (a,b) {
+    this.a = a;
+    this.b = b;
+  }
+
+  var o = new eg(1,2);
+
+
+  console.log(o);
 
   </script>
 </body>
