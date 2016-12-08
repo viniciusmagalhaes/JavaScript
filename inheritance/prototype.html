@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Prototype</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Inheritance - Prototype</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // Inheritance - Prototype
+  // Object literal to make a useful object:
+  // ==========================================================================
+
+  var myMammal = {
+
+    name: 'Herb the Mammal',
+    get_name: function() {
+      return this.name;
+    },
+    says: function() {
+      return this.saying || '';
+    }
+
+  };
+
+
+  var foo = Object.create(myMammal);
+
+  foo.name = 'Another name';
+  foo.says = 'Anything';
+
+
+  console.log(myMammal);
+  console.log(foo);
+
+
+  </script>
+</body>
+</html>

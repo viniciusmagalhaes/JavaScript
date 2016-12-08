@@ -8,6 +8,8 @@ The simple types of JavaScript are numbers, strings, booleans ( true and false )
 
 Every object is linked to a prototype object from which it can inherit properties. All objects created from object literals are linked to Object.prototype , an object that comes standard with JavaScript.
 
+[Reference] (http://wbruno.com.br/javascript-puro/orientacao-a-objetos-em-javascript-funcao-construtora/)
+
 ## Function Objects
 
 Functions in JavaScript are objects. Objects are collections of name/value pairs having a hidden link to a prototype object. Objects produced from object literals are linked to Object.prototype . Function objects are linked to Function.prototype (which is itself linked to Object.prototype ). Every function is also created with two additional hidden properties: the function’s context and the code that implements the function’s behavior.
