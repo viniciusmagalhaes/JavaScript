@@ -16,11 +16,60 @@
   // Pseudoclassical
   // ==========================================================================
 
-  function foo (a,b) {
-    return a + b;
+
+  //
+  // Functional Instantiation
+  // ==========================================================================
+  var bar = function(name, age) {
+
+    var results = Object.create(bar.prototype);
+
+    results.name = name;
+    results.age = age;
+
+    return results;
+
+  };
+
+
+  // This way browser checks my Objects bar and don't find then find on the prototype and return my method.
+  bar.prototype.show = function() {
+    document.querySelector(".item-1").innerHTML = this.name + ' ' + this.age;
   }
 
-  console.log(this.foo);
+  var me = new bar("Vinicius", 26);
+
+  console.log(me);
+
+  me.show();
+
+
+
+
+  //
+  // Pseudo Classical Instantiation
+  // ==========================================================================
+  var person = function(firstName, lastName) {
+
+    this = Object.create(person.prototype);
+
+    this.firstName = firstName;
+    this.lastName  = lastName;
+
+    return this;
+
+  };
+
+  person.prototype.sayName = function() {
+    console.log(this.firstName +' '+ this.lastName);
+  }
+
+  var other = new person("Joao", "Silva");
+
+  other.sayName();
+
+
+  reference: https://tylermcginnis.com/object-creation-in-javascript-functional-instantiation-vs-prototypal-instantiation-vs-pseudo-e9287b6bbb32#.mw0x9h2tx
 
 
   </script>
