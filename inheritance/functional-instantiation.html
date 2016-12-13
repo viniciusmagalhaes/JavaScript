@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions - Functional Instantiation</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Functional Instantiation</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+  // ==========================================================================
+  // Functional Instantiation
+  // ==========================================================================
+
+  var bar = function(name, age) {
+
+    var results = Object.create(bar.prototype);
+
+    results.name = name;
+    results.age = age;
+
+    return results;
+
+  };
+
+
+  // This way browser checks my Objects bar and don't find then find on the prototype and return my method.
+  bar.prototype.show = function() {
+    document.querySelector(".item-1").innerHTML = this.name + ' ' + this.age;
+  }
+
+  var me = new bar("Vinicius", 26);
+
+  console.log(me);
+
+  me.show();
+
+  </script>
+</body>
+</html>
