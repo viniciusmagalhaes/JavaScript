@@ -16,12 +16,37 @@
   // Functional Instantiation
   // ==========================================================================
 
+
+  //
+  // First way
+  // ==========================================================================
+  var person = function(firstName, lastName) {
+
+    return {
+      firstName : this.firstName,
+      lastName : this.lastName,
+      show : function () {
+        console.log( firstName + ' - ' + lastName )
+      }
+    }
+
+  }
+
+  var mySelft = person("Vinicius", "Magalhães");
+
+  mySelft.show();
+
+
+  //
+  // Second way
+  // ==========================================================================
   var bar = function(name, age) {
 
-    var results = Object.create(bar.prototype);
-
+    var results = {};
     results.name = name;
     results.age = age;
+
+    results.sayName = barMethod.sayName;
 
     return results;
 
@@ -29,15 +54,19 @@
 
 
   // This way browser checks my Objects bar and don't find then find on the prototype and return my method.
-  bar.prototype.show = function() {
-    document.querySelector(".item-1").innerHTML = this.name + ' ' + this.age;
+  var barMethod = {};
+  barMethod.sayName = function() {
+    console.log(this.name + ' ~ ' + this.age);
   }
 
-  var me = new bar("Vinicius", 26);
+  var me = bar("Vinicius", 26);
+  var other = bar("Maria", 45);
 
   console.log(me);
+  console.log(other);
 
-  me.show();
+  // me.sayName();
+  // other.sayName();
 
   </script>
 </body>
