@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Array - Array Literals</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Array Literals</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <p>if i define the length of my array and he be greather than lenght he will be cut. ( E.g.: numbers.length = 2;)</p>
+    <div class="item-2"></div>
+  </div>
+
+  <div class="container">
+    <p>i can add element in my array using the lenght</p>
+    <div class="item-3"></div>
+  </div>
+
+  <div class="container">
+    <p>Is it more convenient to use the push method to accomplish the same thing:</p>
+    <div class="item-4"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // Array Literal
+    // ==========================================================================
+
+    var numbers = ['zero', 'one', 'two', 'three', 'four'];
+    document.querySelector(".item-1").innerHTML = numbers;
+
+
+    numbers.length = 2;
+    document.querySelector(".item-2").innerHTML = numbers;
+
+
+    numbers[numbers.length] = '(element add with property length)';
+    document.querySelector(".item-3").innerHTML = numbers;
+
+
+    numbers.push('go');
+    document.querySelector(".item-4").innerHTML = numbers;
+
+  </script>
+
+</body>
+</html>
