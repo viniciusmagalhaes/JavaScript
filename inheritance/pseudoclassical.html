@@ -18,12 +18,12 @@
 
   var person = function(firstName, lastName) {
 
-    // this = Object.create(Config.prototype);
+    var _this = Object.create(person.prototype);
 
-    this.firstName = firstName;
-    this.lastName  = lastName;
+    _this.firstName = firstName;
+    _this.lastName  = lastName;
 
-    // return this;
+    return _this;
 
   };
 
@@ -35,7 +35,7 @@
 
   console.log(other);
 
-  other.sayName();
+  // other.sayName();
 
 
   </script>
