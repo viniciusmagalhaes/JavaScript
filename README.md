@@ -98,3 +98,7 @@ We can use functions and closure to make modules. A module is a function or obje
 ## Pseudoclassical
 
 [reference] (https://tylermcginnis.com/object-creation-in-javascript-functional-instantiation-vs-prototypal-instantiation-vs-pseudo-e9287b6bbb32#.mw0x9h2tx)
+
+## Regular Expressions
+
+The methods that work with regular expressions are regexp.exec, regexp.test, string.match, string.replace, string.search, and string.split.

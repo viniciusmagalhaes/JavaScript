@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Array - Regular Expressions</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Regular Expressions</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // Regular Expressions
+    // ==========================================================================
+
+    var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+
+    var patt = /[0-9]/;
+    var text = 'Book: The Good parts b - jJJ 7';
+
+    var result = text.search(patt);
+
+    document.querySelector(".item-1").innerHTML = result;
+
+  </script>
+
+</body>
+</html>
