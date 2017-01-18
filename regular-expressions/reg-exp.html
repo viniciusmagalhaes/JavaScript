@@ -52,9 +52,8 @@
       //
       // \w
       // ==========================================================================
-      var word       = 'Hello world fdfd fdfd';
-      console.log(word);
-      var sepPattern = /\s/g;
+      var word       = 'Hello world fdfd fdfd 123456789';
+      var sepPattern = /[0-4]|l+/g;
 
       document.querySelector(".item-3").innerHTML = word.match(sepPattern);
 
