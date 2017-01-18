@@ -2,14 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Array - Regular Expressions</title>
+  <title>Regular Expressions</title>
   <link rel="stylesheet" href="../assets/css/index.css">
 </head>
 <body>
 
   <div class="container">
     <h2>Regular Expressions</h2>
+  </div>
+
+  <div class="container">
+    <h2>Search</h2>
     <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <h2>Replace</h2>
+    <div class="item-2"></div>
   </div>
 
   <script>
@@ -17,14 +26,35 @@
     // Regular Expressions
     // ==========================================================================
 
-    var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+    //
+    // Search
+    // ==========================================================================
+      var textSearch    = 'Text Pettern search teste a search 10',
+          patternSearch = /[0|10]/; // Can be a string " "
 
-    var patt = /[0-9]/;
-    var text = 'Book: The Good parts b - jJJ 7';
+      var resultPatternSearch = textSearch.search(patternSearch);
+      document.querySelector(".item-1").innerHTML = 'Your position is: ' + resultPatternSearch;
 
-    var result = text.search(patt);
 
-    document.querySelector(".item-1").innerHTML = result;
+      //
+      // Replace
+      // ==========================================================================
+      var string         = "Hello World !!!",
+          patternReplace = /world/i;
+
+      var result = string.replace(patternReplace, "word Replaced");
+      document.querySelector(".item-2").innerHTML = result;
+
+
+
+    // var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+
+    // var patt = /[o]/g;
+    // var text = 'Book: The Good parts b - jJJ 7';
+
+    // var result = text.match(patt);
+
+    // document.querySelector(".item-1").innerHTML = result;
 
   </script>
 

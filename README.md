@@ -101,4 +101,20 @@ We can use functions and closure to make modules. A module is a function or obje
 
 ## Regular Expressions
 
+A regular expression is an object that describes a pattern of characters.
+
 The methods that work with regular expressions are regexp.exec, regexp.test, string.match, string.replace, string.search, and string.split.
+
+### test()
+
+The test() method is a RegExp expression method.
+
+It searches a string for a pattern, and returns true or false, depending on the result.
+
+## exec()
+
+The exec() method is a RegExp expression method.
+
+It searches a string for a specified pattern, and returns the found text.
+
+If no match is found, it returns null.

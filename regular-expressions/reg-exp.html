@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>RegExp - Regular Expressions</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>RegExp - Regular Expressions</h2>
+  </div>
+
+  <div class="container">
+    <h2>Test ()</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <h2>Exec ()</h2>
+    <div class="item-2"></div>
+  </div>
+
+  <div class="container">
+    <h2>math ()</h2>
+    <div class="item-3"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // RegExp Object
+    // ==========================================================================
+
+    //
+    // test() - return boolean
+    // ==========================================================================
+      var char   = /[e]/,
+          string = 'String test'
+
+      document.querySelector(".item-1").innerHTML = "Exist a letter \'e\' on the string? " + char.test(string);
+
+
+      //
+      // exec()
+      // ==========================================================================
+      var charExec   = /b/,
+          stringExec = 'The quick fox brown jump over the lazy dog';
+
+      document.querySelector(".item-2").innerHTML = charExec.exec(stringExec);
+
+
+      //
+      // \w
+      // ==========================================================================
+      var word       = 'Hello world fdfd fdfd';
+      console.log(word);
+      var sepPattern = /\s/g;
+
+      document.querySelector(".item-3").innerHTML = word.match(sepPattern);
+
+  </script>
+
+</body>
+</html>
