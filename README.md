@@ -118,3 +118,34 @@ The exec() method is a RegExp expression method.
 It searches a string for a specified pattern, and returns the found text.
 
 If no match is found, it returns null.
+
+
+## Methods
+
+
+### Array
+
+#### Concat
+
+Produces a new array containing a shallow copy of this array with the items appended to it.
+
+#### Join
+
+The join makes a string from an array.
+
+#### Pop
+
+The pop method removes and returns the last element of an array.
+
+#### Splice
+
+The splice method removes elements from an array, replacing them with new items.
+
+```js
+array.splice(start, deleteCount, item…)
+```
+
+### Function
+
+#### Apply
+

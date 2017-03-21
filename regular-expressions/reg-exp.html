@@ -24,6 +24,7 @@
   <div class="container">
     <h2>math ()</h2>
     <div class="item-3"></div>
+    <div class="item-3-1"></div>
   </div>
 
   <script>
@@ -52,10 +53,14 @@
       //
       // \w
       // ==========================================================================
-      var word       = 'Hello world fdfd fdfd 123456789';
-      var sepPattern = /[0-4]|l+/g;
+      var word       = 'Hello world fdfd fdfd 123456789 lorexm + (xxxxx)';
+      var sepPattern = /[0-4]|l\+/g;
+      var padrao = /x\w/ig;
 
-      document.querySelector(".item-3").innerHTML = word.match(sepPattern);
+      // document.querySelector(".item-3").innerHTML = word.match(sepPattern);
+
+      document.querySelector(".item-3-1").innerHTML = word.match(padrao);
+
 
   </script>
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Methods - Array</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Regular Expressions</h2>
+  </div>
+
+  <div class="container">
+    <h2>Concat</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <div class="container">
+    <h2>Join</h2>
+    <div class="item-2"></div>
+  </div>
+
+  <div class="container">
+    <h2>Pop</h2>
+    <div class="item-3"></div>
+  </div>
+
+  <div class="container">
+    <h2>Splice</h2>
+    <div class="item-4"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // Methods
+    // ==========================================================================
+
+    //
+    // Concat
+    // ==========================================================================
+    var a = ['a', 'b', 'c'];
+    var b = [1, 2, 3];
+
+    var c = a.concat(b, 'last');
+    document.querySelector(".item-1").innerHTML = c;
+
+
+    //
+    // Join
+    // ==========================================================================
+    document.querySelector(".item-2").innerHTML = a.join('');
+
+
+    //
+    // Pop
+    // ==========================================================================
+    document.querySelector(".item-3").innerHTML = a.pop();
+
+
+    //
+    // Splice
+    // ==========================================================================
+    var arr = [1, 2, 3];
+    arr.splice(1, 1, 'xxxxx', 'z');
+    document.querySelector(".item-4").innerHTML = arr;
+
+  </script>
+
+</body>
+</html>
