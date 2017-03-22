@@ -147,5 +147,12 @@ array.splice(start, deleteCount, item…)
 
 ### Function
 
-#### Apply
+#### Apply / call
 
+Both methods take the an owner object as the first argument. The only difference is that `call()` takes the function arguments separately, and `apply()` takes the function arguments in an array.
+
+### Object
+
+#### hasOwnProperty
+
+The method `hasOwnProperty` verify if exists the name of property in your object and return boolean.

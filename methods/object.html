@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Methods - Object</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>hasOwnProperty</h2>
+    <div class="item-1"></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // Methods
+    // ==========================================================================
+
+    //
+    // hasOwnProperty(name)
+    // ==========================================================================
+    var books = {
+      js: 'The Good Parts',
+      css: 'CSS Secrets',
+    }
+
+    var x = books.hasOwnProperty('js');
+
+    document.querySelector(".item-2").innerHTML = x;
+
+  </script>
+
+</body>
+</html>
