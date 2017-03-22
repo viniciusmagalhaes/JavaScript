@@ -7,28 +7,9 @@
 </head>
 <body>
 
-  <!-- <div class="container">
-    <h2>Regular Expressions</h2>
-  </div> -->
-
   <div class="container">
     <h2>Apply</h2>
     <div class="item-1"></div>
-  </div>
-
-  <div class="container">
-    <h2>Join</h2>
-    <div class="item-2"></div>
-  </div>
-
-  <div class="container">
-    <h2>Pop</h2>
-    <div class="item-3"></div>
-  </div>
-
-  <div class="container">
-    <h2>Splice</h2>
-    <div class="item-4"></div>
   </div>
 
   <script>
@@ -39,11 +20,15 @@
     //
     // Apply
     // ==========================================================================
+    var myObject, myArr = ["Vinicius", "Magalhães"];
+
     function myFunction (FirstName, LastName) {
-      return console.log(FirstName + ' - ' + LastName)
+      return FirstName + ' - ' + LastName;
     }
 
-    var myObject = 
+    myObject = myFunction.apply(myObject, myArr);
+
+    document.querySelector(".item-1").innerHTML = myObject;
 
   </script>
 
